@@ -5,7 +5,7 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/http-wasm/http-wasm-host-go/api/handler"
+	"github.com/httpwasm/http-wasm-host-go/api/handler"
 )
 
 // requestStateKey is a context.Context value associated with a requestState

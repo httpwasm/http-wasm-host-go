@@ -1,5 +1,5 @@
-[![Build](https://github.com/http-wasm/http-wasm-host-go/workflows/build/badge.svg)](https://github.com/http-wasm/http-wasm-host-go)
-[![Go Report Card](https://goreportcard.com/badge/github.com/http-wasm/http-wasm-host-go)](https://goreportcard.com/report/github.com/http-wasm/http-wasm-host-go)
+[![Build](https://github.com/httpwasm/http-wasm-host-go/workflows/build/badge.svg)](https://github.com/httpwasm/http-wasm-host-go)
+[![Go Report Card](https://goreportcard.com/badge/github.com/httpwasm/http-wasm-host-go)](https://goreportcard.com/report/github.com/httpwasm/http-wasm-host-go)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 
 # http-wasm Host Library for Go
@@ -20,4 +20,4 @@ The current maturity phase is early draft. Once this is integrated with
 [3]: https://http-wasm.io/http-handler-abi/
 [4]: https://pkg.go.dev/net/http#Handler
 [5]: https://github.com/corazawaf/coraza-proxy-wasm
-[6]: https://github.com/http-wasm/components-contrib/
+[6]: https://github.com/httpwasm/components-contrib/

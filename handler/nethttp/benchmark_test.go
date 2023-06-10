@@ -8,8 +8,8 @@ import (
 	"strings"
 	"testing"
 
-	nethttp "github.com/http-wasm/http-wasm-host-go/handler/nethttp"
-	"github.com/http-wasm/http-wasm-host-go/internal/test"
+	nethttp "github.com/httpwasm/http-wasm-host-go/handler/nethttp"
+	"github.com/httpwasm/http-wasm-host-go/internal/test"
 )
 
 var (

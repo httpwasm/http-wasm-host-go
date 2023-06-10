@@ -10,7 +10,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/http-wasm/http-wasm-host-go/api/handler"
+	"github.com/httpwasm/http-wasm-host-go/api/handler"
 )
 
 type host struct{}

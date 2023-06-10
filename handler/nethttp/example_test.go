@@ -13,10 +13,10 @@ import (
 
 	"github.com/tetratelabs/wazero"
 
-	"github.com/http-wasm/http-wasm-host-go/api"
-	"github.com/http-wasm/http-wasm-host-go/handler"
-	wasm "github.com/http-wasm/http-wasm-host-go/handler/nethttp"
-	"github.com/http-wasm/http-wasm-host-go/internal/test"
+	"github.com/httpwasm/http-wasm-host-go/api"
+	"github.com/httpwasm/http-wasm-host-go/handler"
+	wasm "github.com/httpwasm/http-wasm-host-go/handler/nethttp"
+	"github.com/httpwasm/http-wasm-host-go/internal/test"
 )
 
 var (

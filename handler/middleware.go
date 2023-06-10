@@ -14,8 +14,8 @@ import (
 	wazeroapi "github.com/tetratelabs/wazero/api"
 	"github.com/tetratelabs/wazero/imports/wasi_snapshot_preview1"
 
-	"github.com/http-wasm/http-wasm-host-go/api"
-	"github.com/http-wasm/http-wasm-host-go/api/handler"
+	"github.com/httpwasm/http-wasm-host-go/api"
+	"github.com/httpwasm/http-wasm-host-go/api/handler"
 )
 
 // Middleware implements the http-wasm handler ABI.

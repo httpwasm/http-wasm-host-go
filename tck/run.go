@@ -8,7 +8,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/http-wasm/http-wasm-host-go/api/handler"
+	"github.com/httpwasm/http-wasm-host-go/api/handler"
 )
 
 // GuestWASM is the guest wasm module used by the TCK. The host must load this

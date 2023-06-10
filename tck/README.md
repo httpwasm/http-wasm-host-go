@@ -55,10 +55,10 @@ can be run using [tck.Run][5].
 in this repository.
 
 [1]: https://http-wasm.io/http-handler-abi/
-[2]: https://pkg.go.dev/github.com/http-wasm/http-wasm-host-go/tck#BackendHandler
-[3]: https://pkg.go.dev/github.com/http-wasm/http-wasm-host-go/tck#StartBackend
-[4]: https://pkg.go.dev/github.com/http-wasm/http-wasm-host-go/tck#GuestWASM
-[5]: https://pkg.go.dev/github.com/http-wasm/http-wasm-host-go/tck#Run
+[2]: https://pkg.go.dev/github.com/httpwasm/http-wasm-host-go/tck#BackendHandler
+[3]: https://pkg.go.dev/github.com/httpwasm/http-wasm-host-go/tck#StartBackend
+[4]: https://pkg.go.dev/github.com/httpwasm/http-wasm-host-go/tck#GuestWASM
+[5]: https://pkg.go.dev/github.com/httpwasm/http-wasm-host-go/tck#Run
 [6]: ../handler/nethttp/tck_test.go
 [7]: https://pkg.go.dev/net/http#Handler
-[8]: https://github.com/http-wasm/http-wasm-tck
+[8]: https://github.com/httpwasm/http-wasm-tck

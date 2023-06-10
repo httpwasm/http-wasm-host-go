@@ -7,8 +7,8 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/http-wasm/http-wasm-host-go/api/handler"
-	"github.com/http-wasm/http-wasm-host-go/testing/handlertest"
+	"github.com/httpwasm/http-wasm-host-go/api/handler"
+	"github.com/httpwasm/http-wasm-host-go/testing/handlertest"
 )
 
 var testCtx = context.Background()

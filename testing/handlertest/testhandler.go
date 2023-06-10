@@ -13,7 +13,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/http-wasm/http-wasm-host-go/api/handler"
+	"github.com/httpwasm/http-wasm-host-go/api/handler"
 )
 
 // HostTest tests a handler.Host by testing default property values and

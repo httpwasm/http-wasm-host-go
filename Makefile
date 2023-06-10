@@ -33,7 +33,7 @@ lint: $(golangci_lint_path)
 .PHONY: format
 format:
 	@go run $(gofumpt) -l -w .
-	@go run $(gosimports) -local github.com/http-wasm/ -w $(shell find . -name '*.go' -type f)
+	@go run $(gosimports) -local github.com/httpwasm/ -w $(shell find . -name '*.go' -type f)
 
 .PHONY: check
 check:

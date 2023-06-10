@@ -141,7 +141,7 @@ const (
 	// interface filename as the module name, but converts function and
 	// parameter names to lower_underscore format.
 	//
-	// See https://github.com/http-wasm/http-wasm-abi/blob/main/http_handler/http_handler.wit.md
+	// See https://github.com/httpwasm/http-wasm-abi/blob/main/http_handler/http_handler.wit.md
 	HostModule = "http_handler"
 
 	// FuncEnableFeatures tries to enable the given features and returns the
@@ -179,7 +179,7 @@ const (
 
 	// FuncLog logs a message to the host's logs at the given api.LogLevel.
 	//
-	// See https://github.com/http-wasm/http-wasm-abi/blob/main/http_handler/http_handler.wit.md#log
+	// See https://github.com/httpwasm/http-wasm-abi/blob/main/http_handler/http_handler.wit.md#log
 	FuncLog = "log"
 
 	// FuncHandleRequest is the entrypoint guest export called by the host when
@@ -228,7 +228,7 @@ const (
 	// Note: The URI may include query parameters.
 	//
 	// TODO: update document on http-wasm-abi
-	// See https://github.com/http-wasm/http-wasm-abi/blob/main/http_handler/http_handler.wit.md#get_uri
+	// See https://github.com/httpwasm/http-wasm-abi/blob/main/http_handler/http_handler.wit.md#get_uri
 	FuncGetURI = "get_uri"
 
 	// FuncSetURI overwrites the URI with one read from memory.
@@ -236,7 +236,7 @@ const (
 	// Note: The URI may include query parameters.
 	//
 	// TODO: update document on http-wasm-abi
-	// See https://github.com/http-wasm/http-wasm-abi/blob/main/http_handler/http_handler.wit.md#set_uri
+	// See https://github.com/httpwasm/http-wasm-abi/blob/main/http_handler/http_handler.wit.md#set_uri
 	FuncSetURI = "set_uri"
 
 	// FuncGetProtocolVersion writes the HTTP protocol version to memory if it

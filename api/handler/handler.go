@@ -4,7 +4,7 @@ import (
 	"context"
 	"io"
 
-	"github.com/http-wasm/http-wasm-host-go/api"
+	"github.com/httpwasm/http-wasm-host-go/api"
 )
 
 // Middleware is a factory of handler instances implemented in Wasm.

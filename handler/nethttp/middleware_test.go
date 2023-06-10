@@ -9,10 +9,10 @@ import (
 	"strings"
 	"testing"
 
-	handlerapi "github.com/http-wasm/http-wasm-host-go/api/handler"
-	"github.com/http-wasm/http-wasm-host-go/handler"
-	wasm "github.com/http-wasm/http-wasm-host-go/handler/nethttp"
-	"github.com/http-wasm/http-wasm-host-go/internal/test"
+	handlerapi "github.com/httpwasm/http-wasm-host-go/api/handler"
+	"github.com/httpwasm/http-wasm-host-go/handler"
+	wasm "github.com/httpwasm/http-wasm-host-go/handler/nethttp"
+	"github.com/httpwasm/http-wasm-host-go/internal/test"
 )
 
 var (

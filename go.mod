@@ -1,5 +1,5 @@
-module github.com/http-wasm/http-wasm-host-go
+module github.com/httpwasm/http-wasm-host-go
 
-go 1.19
+go 1.20
 
 require github.com/tetratelabs/wazero v1.2.0

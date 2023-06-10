@@ -5,7 +5,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/http-wasm/http-wasm-host-go/tck"
+	"github.com/httpwasm/http-wasm-host-go/tck"
 )
 
 func TestTCK(t *testing.T) {

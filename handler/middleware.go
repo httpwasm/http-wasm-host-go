@@ -48,11 +48,11 @@ type Middleware interface {
 var _ Middleware = (*middleware)(nil)
 
 type middleware struct {
-	host            handler.Host
-	runtime         wazero.Runtime
-	guestModule     wazero.CompiledModule
-	moduleConfig    wazero.ModuleConfig
-	guestConfig     []byte
+	host            handler.Host          // host实现
+	runtime         wazero.Runtime        // 运行时
+	guestModule     wazero.CompiledModule //编译的模式
+	moduleConfig    wazero.ModuleConfig   //模块配置
+	guestConfig     []byte                // wasm二进制文件
 	logger          api.Logger
 	pool            sync.Pool
 	features        handler.Features
@@ -307,6 +307,32 @@ func (m *middleware) setMethod(ctx context.Context, mod wazeroapi.Module, params
 	}
 	p = mustReadString(mod.Memory(), "method", method, methodLen)
 	m.host.SetMethod(ctx, p)
+}
+
+// getTemplate implements the WebAssembly host function handler.FuncGetTemplate.
+func (m *middleware) getTemplate(ctx context.Context, mod wazeroapi.Module, stack []uint64) {
+	buf := uint32(stack[0])
+	bufLimit := handler.BufLimit(stack[1])
+
+	template := m.host.GetTemplate(ctx)
+	templateLen := writeStringIfUnderLimit(mod.Memory(), buf, bufLimit, template)
+
+	stack[0] = uint64(templateLen)
+}
+
+// setTemplate implements the WebAssembly host function handler.FuncSetTemplate.
+func (m *middleware) setTemplate(ctx context.Context, mod wazeroapi.Module, params []uint64) {
+	template := uint32(params[0])
+	templateLen := uint32(params[1])
+
+	_ = mustBeforeNext(ctx, "set", "template")
+
+	var p string
+	if templateLen == 0 {
+		panic("HTTP template cannot be empty")
+	}
+	p = mustReadString(mod.Memory(), "template", template, templateLen)
+	m.host.SetTemplate(ctx, p)
 }
 
 // getURI implements the WebAssembly host function handler.FuncGetURI.
@@ -663,6 +689,14 @@ func (m *middleware) instantiateHost(ctx context.Context) (wazeroapi.Module, err
 		NewFunctionBuilder().
 		WithGoModuleFunction(wazeroapi.GoModuleFunc(m.setMethod), []wazeroapi.ValueType{i32, i32}, []wazeroapi.ValueType{}).
 		WithParameterNames("method", "method_len").Export(handler.FuncSetMethod).
+		//getTemplate
+		NewFunctionBuilder().
+		WithGoModuleFunction(wazeroapi.GoModuleFunc(m.getTemplate), []wazeroapi.ValueType{i32, i32}, []wazeroapi.ValueType{i32}).
+		WithParameterNames("buf", "buf_limit").Export(handler.FuncGetTemplate).
+		NewFunctionBuilder().
+		//setTemplate
+		WithGoModuleFunction(wazeroapi.GoModuleFunc(m.setTemplate), []wazeroapi.ValueType{i32, i32}, []wazeroapi.ValueType{}).
+		WithParameterNames("template", "template_len").Export(handler.FuncSetTemplate).
 		NewFunctionBuilder().
 		WithGoModuleFunction(wazeroapi.GoModuleFunc(m.getURI), []wazeroapi.ValueType{i32, i32}, []wazeroapi.ValueType{i32}).
 		WithParameterNames("buf", "buf_limit").Export(handler.FuncGetURI).

@@ -34,6 +34,12 @@ type Host interface {
 	// SetMethod supports the WebAssembly function export FuncSetMethod.
 	SetMethod(ctx context.Context, method string)
 
+	// GetTemplate supports the WebAssembly function export FuncGetTemplate.
+	GetTemplate(ctx context.Context) string
+
+	// SetTemplate supports the WebAssembly function export FuncSetTemplate.
+	SetTemplate(ctx context.Context, template string)
+
 	// GetURI supports the WebAssembly function export FuncGetURI.
 	GetURI(ctx context.Context) string
 
@@ -177,6 +183,8 @@ var _ Host = UnimplementedHost{}
 func (UnimplementedHost) EnableFeatures(context.Context, Features) Features                  { return 0 }
 func (UnimplementedHost) GetMethod(context.Context) string                                   { return "GET" }
 func (UnimplementedHost) SetMethod(context.Context, string)                                  {}
+func (UnimplementedHost) GetTemplate(context.Context) string                                 { return "" }
+func (UnimplementedHost) SetTemplate(context.Context, string)                                {}
 func (UnimplementedHost) GetURI(context.Context) string                                      { return "" }
 func (UnimplementedHost) SetURI(context.Context, string)                                     {}
 func (UnimplementedHost) GetProtocolVersion(context.Context) string                          { return "HTTP/1.1" }

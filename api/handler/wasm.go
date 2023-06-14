@@ -222,6 +222,17 @@ const (
 	// TODO: document on http-wasm-abi
 	FuncSetMethod = "set_method"
 
+	// FuncGetTemplate writes the template to memory if it isn't larger than
+	// BufLimit. The result is its length in bytes. Ex. "GET"
+	//
+	// TODO: document on http-wasm-abi
+	FuncGetTemplate = "get_template"
+
+	// FuncSetTemplate overwrites the template with one read from memory.
+	//
+	// TODO: document on http-wasm-abi
+	FuncSetTemplate = "set_template"
+
 	// FuncGetURI writes the URI to memory if it isn't larger than BufLimit.
 	// The result is its length in bytes. Ex. "/v1.0/hi?name=panda"
 	//

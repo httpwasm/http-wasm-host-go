@@ -39,6 +39,15 @@ func (host) SetMethod(ctx context.Context, method string) {
 	r.Method = method
 }
 
+// GetTemplate implements the same method as documented on handler.Host.
+func (host) GetTemplate(ctx context.Context) string {
+	return ""
+}
+
+// SetTemplate implements the same method as documented on handler.Host.
+func (host) SetTemplate(ctx context.Context, method string) {
+}
+
 // GetURI implements the same method as documented on handler.Host.
 func (host) GetURI(ctx context.Context) string {
 	r := requestStateFromContext(ctx).r
